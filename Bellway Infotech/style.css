@@ -29,7 +29,7 @@ body{
     height: 120px;
     width: 370.12px;
 }
-#image2{
+.image2{
     position: absolute;
     top:145px;
     right:385px;
@@ -37,8 +37,28 @@ body{
     margin-left: 900px; */
     width:"246.01px";
     border-image-source: linear-gradient(69.61deg, #FFFFFF 25.92%, rgba(255, 255, 255, 0) 87.74%);
+    animation-iteration-count: 0;
+    animation-name: image2;
+    animation-duration: 3s;
+    animation: image2 3s linear infinite;
 }
-#content{
+@keyframes image2{
+    /* from{
+        transform: translateY(-100%);
+    }to{
+        transform: translateY(0);
+    } */
+    0%{
+        filter:hue-rotate(0deg)
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+
+}
+
+
+.content{
     position: relative;
     top: 45px;
     left: 5px;
@@ -49,9 +69,20 @@ body{
     letter-spacing: 0em;
     text-align: left;
     color: #FFFFFF;
+    animation-iteration-count: infinite;
+    animation-name: content;
+    animation-duration: 3s;
+
 
 }
-#content2{
+@keyframes content{
+    from{
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+.content2{
     margin-top: -80px;
     margin-left: 115px;
    font-family: sans-serif;
@@ -61,17 +92,30 @@ body{
   letter-spacing: 0em;
    text-align: left;
  color: #FFFFFF;
+ animation-iteration-count: infinite;
+ animation-name: content2;
+    animation-duration: 3s;
+   
 
 }
-#lines{
+@keyframes content2{
+    from{
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+.lines{
     width: 1330px;
     display: flex;
     margin-top: -635px;
     margin-left: -40px;
+
     /* position: reltive;
     top: -720px;
     left: -35px; */
 }
+
 
 
 #image3{
@@ -82,10 +126,14 @@ body{
     position: absolute;
     top: 230px;
     left: 920px;
-   
+    animation-name: image2;
+    animation-duration: 3s;
+    animation: image2 3s linear infinite;
+    
 
 }
-#button1{
+
+.button1{
     
     display: flex;
     justify-content: center;
@@ -112,6 +160,16 @@ body{
    
     font-weight: 410;
     cursor: pointer;  
+    animation-name: button1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /* transition: transform 0.3s ease; */
+    animation-timing-function: ease-in-out;
+}
+@keyframes button1{
+  from{
+    transform: scale(1.1);
+  }
 }
 
 #professional{
@@ -127,7 +185,39 @@ line-height: 58px;
 letter-spacing: 0em;
 color: #FFFFFF;
 
+
 }
+#group,#group1,#web,#group2,#middle,#middle1,#web2,#rectangle,#hire,#group3,#group4{
+    animation: zoomIn 4s forwards infinite;
+}
+@keyframes zoomIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+
+
+  #mobile,#mobile1,#cloud{
+    animation: scalePulse 2s infinite alternate;
+}
+
+@keyframes scalePulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+        
+
+  
 #group{
     /* width: 541px; */
 height: 142px;
@@ -244,7 +334,9 @@ height: 109px;
 position: absolute;
 top:1200px;
 left:610px;
-}
+}  
+
+
 #group4{
     width: 535px;
     height: 146px;
@@ -273,14 +365,27 @@ color: #FFFFFF;
 position: absolute;
 top: 2020px;
 left: 377px;
+text-shadow: 0 0 10px  #510707, 0 0 20px  #510707, 0 0 30px #510707, 0 0 40px #510707, 0 0 50px #510707, 0 0 60px #510707, 0 0 70px #510707;
+  animation: glow-animation 3s linear infinite;
 
+}@keyframes glow-animation {
+  0% {
+    text-shadow: 0 0 10px  #510707, 0 0 20px  #510707, 0 0 30px #510707, 0 0 40px #510707, 0 0 50px #510707, 0 0 60px #510707, 0 0 70px #510707;
+  }
+  50% {
+    text-shadow: 0 0 10px  #510707, 0 0 20px  #510707, 0 0 30px #510707, 0 0 40px #510707, 0 0 50px #510707, 0 0 60px #510707, 0 0 70px #510707;
+  }
+  100% {
+    text-shadow: 0 0 10px  #ed4e63, 0 0 20px  #ed4e63, 0 0 30px #ed4e63, 0 0 40px  #ed4e63, 0 0 50px #ed4e63, 0 0 60px #ed4e63, 0 0 70px #ed4e63;
+  }
 }
 #figma{
     width: 140px;
-height: 140px;
+height: 140px;             
 position: absolute;
 top:2150px;
 left: 180px;
+
 
 }
 #adobe{
@@ -375,6 +480,21 @@ top:2580px;
 left: 1010px
 
 }
+
+#figma,#adobe,#sql,#mongo,#amazon,#laravel,#google,#amazon,#nodejs,#flutter,#react,#postman,#android{
+    transform-style: preserve-3d;  
+  animation: rotate-3d 5s linear infinite;
+}@keyframes rotate-3d {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}    
+
+
+
 #explore{
     display: flex;
     justify-content: center;
@@ -395,7 +515,18 @@ position: absolute;
 top:2790px;
 left: 580px;
 border-width: 7px;
+animation-name: button1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+/* transition: transform 0.3s ease; */
+animation-timing-function: ease-in-out;
 }
+@keyframes button1{
+from{
+transform: scale(1.1);
+}
+}
+
 /* #flutter{
     width: 140px;
 height: 140px; */
@@ -408,7 +539,7 @@ height: 140px; */
     top: -1500px;
     left: 61px;
 } */
-#para1{
+.para1{
       font-family: sans-serif;
       display: inline-block;
 font-size: 42px;
@@ -420,21 +551,74 @@ color: #FFFFFF;
 position: absolute;
 top: 1430px;
 left: 340px;
+/* animation: wavy 0.5s infinite linear alternate; */
+animation: zigzag 2s linear infinite alternate;
 }
+@keyframes zigzag{
+    0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(10px);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      75% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+ 
+        /* 0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-5px);
+        } */
+}
+
 #image4{
     width: 566.27px;
     position: absolute;
     top: 1537px;
     right: 630px;
     border: 1px ;
+    
+    animation-iteration-count: infinite;
+    animation-name: content;
+    animation-duration: 3s;
+
+
 }
+@keyframes content{
+    from{
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+    
+
+
+
 #image5{
     width: 490px;
     height: Fixed (320px);
     position: absolute;
     top:1557px ;
     left:740px;
+    animation: wavy 1s infinite linear alternate;
 }
+@keyframes wavy {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
 
 #view{
     width: 103px;
@@ -483,32 +667,56 @@ color: #FFFFFF;
     position: absolute;
     top: 3150px;
     left: 21px;
+    
 }
+
 #image8{
-    width: 300px;
+    width: 295px;
     position: absolute;
     top: 3380px;
     left: 480px; 
+    animation: spin 2s linear infinite;
+    
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #app{
     width: 200px;
     position: absolute;
     top:3210px ;
-    left:1030px;   
-}  
+    left:1030px;  
+   
+
+}
+
+ 
 #app2{
     width: 262px;
     position: absolute;
     top: 3180px;
     right: 160px;
 
+
+
 }
+
+
 #app3{
     /* width: 281px; */
     position: absolute;
     top: 3150px;
     right: 285px;
+
 }
+
 #view2{
     display: flex;
     justify-content: center;
@@ -529,7 +737,18 @@ position: absolute;
 top:3750px;
 left: 540px;
 border-width: 5px;
+animation-name: button1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+/* transition: transform 0.3s ease; */
+animation-timing-function: ease-in-out;
 }
+@keyframes button1{
+from{
+transform: scale(1.1);
+}
+}
+
 #para3{
     display: inline-block;
     font-family: sans-serif;
@@ -542,6 +761,7 @@ color: #FFFFFF;
 position: absolute;
 top: 3880px;
 left: 260px ;
+animation: glow-animation 3s linear infinite;
 }
 #para4{
     width: 584px;
@@ -573,7 +793,22 @@ text-transform: capitalize;
 position: absolute;
 top: 4120px;
 left:30px;
+
 }
+#image7,#app,#app2,#app3{
+    animation: zoomIn 4s forwards infinite;
+}
+@keyframes zoomIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
 #button2{
 
     display: flex;
@@ -595,6 +830,16 @@ position: absolute;
 top:4420px;
 left: 75px;
 border-width: 7px;
+animation-name: button1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+/* transition: transform 0.3s ease; */
+animation-timing-function: ease-in-out;
+}
+@keyframes button1{
+from{
+transform: scale(1.1);
+}
 
 }
 #image9{
@@ -603,7 +848,18 @@ height: 318px;
 position: absolute;
 top: 4065px;
 left: 590px;
+animation: opacityPulse 0.5s infinite alternate;
 }
+
+@keyframes opacityPulse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
 #para6{
     width: 500px;
 height: 56px;
@@ -617,7 +873,19 @@ color: #FFFFFF;
 position: absolute;
 top:4580px;
 left: 450px;
+
 }
+#para6,#para7{
+    opacity: 0;
+  animation: reveal 4s ease forwards infinite;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+
 #para7{
     width: 858px;
 height: 72px;
@@ -638,7 +906,21 @@ height: 500px;
 position: absolute;
 top: 4770px;
 left: 90px;
+transform: scale(0);
+/* animation-iteration-count: infinite; */
+  animation: zoomIn 4s forwards infinite;
 }
+@keyframes zoomIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
 #para8{
     width: 261px;
 height: 58px;
@@ -652,6 +934,7 @@ color: #FFFFFF;
 position: absolute;
 top: 5400px;
 left: 500px;
+
 }
         /* *{ 
         box-sizing: border-box;
@@ -714,9 +997,42 @@ left: 430px;
 height: 500.5px;
 position: absolute;
 top: 6510px;
-left:120px
+left:120px;
+animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* animation: zoomIn 4s ;
+animation-delay: 0.5s;
 
 }
+@keyframes zoomIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  } */
+
 #rectangle4{
     width: 270px;
 height: 350px;
@@ -725,13 +1041,42 @@ box-shadow:  #00000040;
 position: absolute;
 top: 6460px;
 left:140px;
+animation: shake 0.5s infinite;
 }
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* #para10,#rectangle4{
+    animation: zoomIn 4s ;
+animation-delay: 0.5;
+} */
+
+
 #review{
     width: 60px;
 height: 60px;
 position: absolute;
 top: 6810px;
 left: 145px;
+
 }
 #manish{
     width: 135px;
@@ -761,6 +1106,7 @@ top: 6520px;
 left: 160px;
 
 }
+
 #para11{
     width: 97px;
 height: 32px;
@@ -772,6 +1118,7 @@ letter-spacing: 0em;
 position: absolute;
 top: 6770px;
 left: 290px;
+
 }
 #vector2{
     width: 340px;
@@ -779,7 +1126,18 @@ height: 505px;
 position: absolute;
 top: 6510px;
 left: 480px;
+animation: bounce 0.5s infinite alternate;
 }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
 #rectangle5{
     width: 270px;
     height: 350px;
@@ -787,8 +1145,41 @@ left: 480px;
     box-shadow:  #00000040;
     position: absolute;
     top: 6460px;
-    left:515px
+    left:515px;
+    animation: bounce 0.5s infinite alternate;
 }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+#rectangle6,#vector3{
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 #review2{
     width: 60px;
 height: 60px;
@@ -834,7 +1225,9 @@ position: absolute;
 top: 6500px;
 left: 868px;
 
+
 }
+
 #rectangle6{
     width: 270px;
     height: 350px;
@@ -842,7 +1235,8 @@ left: 868px;
     box-shadow:  #00000040;
     position: absolute;
     top: 6460px;
-    left:890px
+    left:890px;
+   
    
 }
 #review3{
@@ -893,9 +1287,23 @@ height: 233.39px;
 angle: -19.81 deg;
 position: absolute;
 top: 7140px;
-
-
 }
+#question,#question2{
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 #para14{
     width: 818px;
 height: 64px;
@@ -910,6 +1318,27 @@ top: 7210px;
 left: 230px;
 
 }
+#para14,#para15,#para16,#para17{
+    animation: zigzag 2s linear infinite alternate;
+}
+@keyframes zigzag{
+    0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(10px);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      75% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+ 
+}
 #para15{
     width: 127px;
 height: 32px;
@@ -919,6 +1348,7 @@ font-weight: 550;
 line-height: 32px;
 letter-spacing: 0em;
 color: #FFFFFF;
+
 
 position: absolute;
 top: 7310px;
@@ -946,6 +1376,7 @@ position: absolute;
 top: 7430px;
 left: 230px;
 color: #FFFFFF;
+
 
 }
 #rectangle9{
@@ -988,6 +1419,25 @@ position: absolute;
 top:  7750px;
 left: 40px;
 z-index: 1;
+animation: zigzag 2s linear infinite alternate;
+}
+@keyframes zigzag{
+    0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(10px);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      75% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+ 
 }
 #feedback{
    
@@ -1012,16 +1462,26 @@ justify-content: center;
 align-items: center;
 position: absolute;
 top: 7730px;
-left: 231px
+left: 231px;
+animation-name: button1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+/* transition: transform 0.3s ease; */
+animation-timing-function: ease-in-out;
 }
+@keyframes button1{
+from{
+transform: scale(1.1);
+}
+}
+
 #question2{
     width: 160px;
 height: 160px;
 angle: 29.28 deg;
 position: absolute;
 top: 7700px;
-left: 1070px
-
+left: 1070px;
 }
 #support{
     width: 520px;
@@ -1029,8 +1489,15 @@ height: 420px;
 position: absolute;
 top: 7300px;
 left: 740px;
+transform: translateX(-100%);
+ 
+  animation: zoomIn 4s infinite ;
 
 }
+
+
+
+
 #rectangles{
     width: 100%;
 height: 180px;
